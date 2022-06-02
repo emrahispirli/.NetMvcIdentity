@@ -1,0 +1,65 @@
+﻿@model string
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.AntiForgeryToken()
+
+
+<h2>Role Ekleme</h2>
+
+<div class="col-md-5" style="font-weight: 500;">
+    <hr />
+    <div>
+        <form asp-controller="AdminRole" asp-action="Create" method="post">
+            <div asp-validation-summary="All" style="color:red"></div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Kullanıcı Adı</label>
+                <input name="name" value="" class="form-control" id="name" placeholder="Role  Giriniz." autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary " id="btnkaydet"> Kaydet</button>
+                <a style="margin-left:10px" asp-action="Index" class="btn btn-secondary"> Listeye Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@*<div class="container m-4 ">
+
+    @Html.AntiForgeryToken()
+
+    <div class="card m-auto" style="font-weight: 500; width: 500px;">
+        <div class="card-header font-weight-bold text-center">
+            ROLE EKLEME FORMU
+        </div>
+
+        <div class="card-body">
+
+            <form asp-controller="AdminRole" asp-action="Create" method="post">
+                <div asp-validation-summary="All"></div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" style="font-weight:bold; width:150px">Role Adı :</span>
+                    </div>
+                    <input name="name" value="" class="form-control" placeholder="Role  Giriniz." autocomplete="off" />
+                </div>
+
+                <div class="form-group" style="margin-top:15px;">
+                    <div>
+                        <button class="btn btn-primary " id="btnkaydet"> Kaydet</button>
+                        <a style="margin-left:10px" asp-action="Index" class="btn btn-secondary "> Listeye Dön</a>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+
+    </div>
+</div>*@
+
+

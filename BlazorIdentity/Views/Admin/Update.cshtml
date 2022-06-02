@@ -1,0 +1,46 @@
+﻿@model ApplicationUser
+@using BlazorIdentity.Models.Identity
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@Html.AntiForgeryToken()
+
+<h2>Kullanıcı Düzenleme</h2>
+
+<div class="col-md-5" style="font-weight: 500;">
+    <hr />
+    <div>
+        <form asp-controller="Admin" asp-action="Update" method="post">
+
+            <div class="mb-3">
+                <label for="id" class="form-label">Id</label>
+                <input asp-for="Id" class="form-control" id="id" readonly>
+            </div>
+
+            <div class="mb-3">
+                <label for="Email" class="form-label">E-Mail</label>
+                <input asp-for="Email" required class="form-control" id="Email" placeholder="Email Adresi Giriniz." autocomplete="off">
+            </div>
+
+
+            <div class="mb-3">
+                <label for="Password" class="form-label">Şifre</label>
+                <input name="Password" class="form-control" required id="Password" placeholder="Sifre Giriniz." autocomplete="off">
+
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary " id="btnkaydet"> Güncelle</button>
+                <a style="margin-left:10px" asp-action="Index" class="btn btn-secondary"> Listeye Dön</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+

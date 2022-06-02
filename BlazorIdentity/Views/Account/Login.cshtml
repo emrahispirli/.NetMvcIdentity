@@ -1,0 +1,26 @@
+﻿@model LoginModel
+@using BlazorIdentity.Models.Identity
+
+<div class="container" style="max-width:600px;margin-top:5%">   
+      @Html.AntiForgeryToken()
+    <div class="m-5 p-5">
+        <form asp-action="Login" method="post">
+           
+            <div class="text-danger" asp-validation-summary="All"></div>
+            <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary form-control">Login</button>
+        </form>
+    </div>
+
+</div>
